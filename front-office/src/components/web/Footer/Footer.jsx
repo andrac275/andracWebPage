@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; 2024 My Portfolio</p>
+      <p>&copy; July 2024 Andreu Mut</p>
     </footer>
   );
 }

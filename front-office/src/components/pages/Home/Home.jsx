@@ -31,8 +31,13 @@ export default function Home() {
       <div class="dark">
         <div class="bg-white dark:bg-black text-white">Will be black</div>
       </div>
-      <button onClick={changeLanguage}>Language</button>
+      <br />
+      <button style={{ border: "1px solid #000" }} onClick={changeLanguage}>
+        Change Language
+      </button>
       <div>{selLang.home.par1}</div>
+      <div>{selLang.home.par2}</div>
+      <div>{selLang.home.par3}</div>
     </div>
   );
 }

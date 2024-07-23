@@ -1,6 +1,8 @@
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 export default function Header() {
   return (
@@ -21,6 +23,8 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
+      <LanguageSelector />
     </header>
   );
 }

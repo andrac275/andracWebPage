@@ -1,5 +1,6 @@
+import { SPANISH } from "./languageConstants";
 export const languageES = {
-  language: "ES",
+  language: SPANISH,
   profile: {
     rol: "Developer",
     description: "1 year experience blah blah blah",

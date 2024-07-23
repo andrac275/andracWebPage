@@ -7,7 +7,7 @@ import { languageES } from "../../../languages/es";
 import { ENGLISH, SPANISH } from "../../../languages/languageConstants";
 
 export default function LanguageSelector() {
-  const [language, setLanguage] = useState(languageEN);
+  const [language, setLanguage] = useState(languageES);
   const [languageToggle, setLanguageToggle] = useState(SPANISH);
 
   const changeLanguage = (event, value) => {

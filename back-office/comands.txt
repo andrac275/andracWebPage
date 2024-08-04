@@ -1,0 +1,21 @@
+Start as dev. This commandLine (and other ones) can be checked in package.json
+    npm run start:dev
+
+Generate
+    nest generate --help    <- Shows all the help
+    nest generate module name (or path/name)
+    nest generate controller name (or path/name)
+        nest g co name --no-spec  <- noSpec makes the filer spec.ts to NOT be generated with the controller
+    nest generate service name
+        --no-spec can be used right there too. Same reason as controller
+
+On eslint.js  makes eslint to not show an error when working on Windows because commas
+    ,'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    It has to be writen inside 'rules' section
+
+Show nest icons on nest project
+    Press F1 and search for 'JSON' and select 'Preferences: Open workspace settings (JSON)'
+    Add this line:
+        {
+            "material-icon-theme.activeIconPack": "nest"
+        }

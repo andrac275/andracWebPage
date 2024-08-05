@@ -19,3 +19,5 @@ Show nest icons on nest project
         {
             "material-icon-theme.activeIconPack": "nest"
         }
+
+A DTO can be used to validate data. Check Tasks module for more information

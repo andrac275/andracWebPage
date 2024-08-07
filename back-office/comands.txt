@@ -20,4 +20,5 @@ Show nest icons on nest project
             "material-icon-theme.activeIconPack": "nest"
         }
 
-A DTO can be used to validate data. Check Tasks module for more information
+A DTO can be used to validate data. Check Tasks module for more information. Through the following link (nestJS validation documentation), I can check what I need and how to do it.
+    https://docs.nestjs.com/techniques/validation

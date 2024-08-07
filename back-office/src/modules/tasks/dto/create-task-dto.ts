@@ -1,5 +1,13 @@
-export interface CreateTaskDTO {
+import { IsBoolean, IsString, MinLength } from 'class-validator';
+export class CreateTaskDTO {
+  @IsString()
+  @MinLength(1)
   title: string;
+
+  @IsString()
+  @MinLength(1)
   description: string;
+
+  @IsBoolean()
   done: boolean;
 }

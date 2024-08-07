@@ -1,4 +1,4 @@
-import { Controller, Get, Req, Res } from '@nestjs/common';
+import { Controller, Get, HttpCode, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 @Controller('')
@@ -11,5 +11,24 @@ export class IndexController {
     response.status(200).json({
       message: 'Index web page',
     });
+  }
+
+  //Custom HTTP response codes
+  @Get('new')
+  @HttpCode(201)
+  somethingNew() {
+    return 'Something new!!!! On index module';
+  }
+
+  @Get('notFound')
+  @HttpCode(404)
+  notFoundPage() {
+    return '404 not found on index module';
+  }
+
+  @Get('errorPage')
+  @HttpCode(500)
+  errorPage() {
+    return 'Error Router on index module';
   }
 }

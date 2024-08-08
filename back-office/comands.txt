@@ -16,6 +16,8 @@ Generate
     nest g pipe name
     --GUARD
     nest g guard name
+    --MIDDLEWARE
+    nest g middleware name
 =================================================================================
 #NestJS Concepts and USEFUL INFORMATION#
 
@@ -56,4 +58,17 @@ Example: I can create a Guard that checks a user role and allow or not depending
 
 ===
 MIDDLEWARES
+That's used to passthrough the middleware everytime a controller is accessed. In this example every time I visit the controller users with GET,POST... ('/users') this execute the middleware. 
+Try it! http://localhost:3000/users
+Example of middleware on modules/users/logger. That's the middleware but have to be configurated in the module 'userse.module.ts'
+    UsersModule has to implement 'NestModule'
+    UsersModule has to define 'configure' function
+I created another middleware (AuthMiddleware) and that is used in users.module.ts too after LoggerMiddleware
+    This second middleware checks if a POST object have a Headers called 'authorization', if not, throws
+        {
+            "statusCode": 401,
+            "message": "ANDRAC auth-middleware: Unauthorized"
+        }
+    If it has it, it checks if the value is 'abcd123' (Thats the value defined in auth-middleware.middleware.ts) check the line
+        Now will show the DTO validations
 

@@ -8,9 +8,11 @@ import {
   Query,
   Req,
   Res,
+  UseGuards,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { ValidateUserPipe } from './pipes/validate-user.pipe';
+import { AuthGuard } from './guards/auth.guard';
 
 @Controller('')
 export class IndexController {
@@ -43,6 +45,7 @@ export class IndexController {
     return 'Error Router on index module';
   }
 
+  //----------------
   //Pipes example
   /* 'ticket/:num' sends an string and if I GET 'ticket/10' this returna 1014
   This is why is necessary to add the ParseIntPipe next to the @Param, this
@@ -65,6 +68,14 @@ export class IndexController {
     console.log(` Type of Name after pipe: ${typeof query.name}`);
     console.log(` Type of Age after pipe: ${typeof query.age}`);
 
+    return `Hello ${query.name}, you are ${query.age} years old`;
+  }
+
+  //----------------
+  //Guards example
+  @Get('greetWithGuard')
+  @UseGuards(AuthGuard)
+  greetUserWithGuard(@Query() query: { name: string; age: number }) {
     return `Hello ${query.name}, you are ${query.age} years old`;
   }
 }

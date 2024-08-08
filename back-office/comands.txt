@@ -4,14 +4,20 @@ Start as dev. This commandLine (and other ones) can be checked in package.json
 
 Generate
     nest generate --help    <- Shows all the help
+    --MODULE
     nest generate module name (or path/name)
+    --CONTROLLER
     nest generate controller name (or path/name)
         nest g co name --no-spec  <- noSpec makes the filer spec.ts to NOT be generated with the controller
+    --SERVICE
     nest generate service name
         --no-spec can be used right there too. Same reason as controller
+    --PIPE
     nest g pipe name
+    --GUARD
+    nest g guard name
 =================================================================================
-#USEFUL INFORMATION#
+#NestJS Concepts and USEFUL INFORMATION#
 
 On eslint.js  makes eslint to not show an error when working on Windows because commas
     ,'prettier/prettier': ['error', { endOfLine: 'auto' }],
@@ -34,3 +40,20 @@ PIPES
 Pipes are used on nestJS to process information. For example:ParseBoolPipe or ParseIntPipe
 In the 'index' module controller there is an example on getNumber function.
 BUT it is possible to create own pipes, for example this one: 'index/pipes/validate-user.pipe.ts'
+
+===
+GUARDS
+Those are functions that protect other functions. We can use an "if" to filtrate something, yes. BUT with a guard, we can do the same and can be reusable. 
+There is an example in modules/index/guards/auth
+If a guard return false (for example: GET 'http://localhost:3000/greetWithGuard'), the server sends 
+    {
+        "statusCode": 403,
+        "message": "Forbidden resource",
+        "error": "Forbidden"
+    }
+If the guard returns true (for example: GET 'http://localhost:3000/greetWithGuard/?name=Andrac&age=33'), it works as developed.
+Example: I can create a Guard that checks a user role and allow or not depending the role. And this guard can be reusable wherever is needed
+
+===
+MIDDLEWARES
+

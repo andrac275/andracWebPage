@@ -18,6 +18,8 @@ Generate
     nest g guard name
     --MIDDLEWARE
     nest g middleware name
+    --RESOURCES
+    nest g recourse name        //This generates the service, module, controller, dto, test and entity files
 =================================================================================
 #NestJS Concepts and USEFUL INFORMATION#
 
@@ -72,3 +74,9 @@ I created another middleware (AuthMiddleware) and that is used in users.module.t
     If it has it, it checks if the value is 'abcd123' (Thats the value defined in auth-middleware.middleware.ts) check the line
         Now will show the DTO validations
 
+===
+RESOURCES
+Resources is a command that creates different files in a single command. Resources creates a service, module, controller, even the DTO in just one command
+    I created a module called "resourcesTest" as a REST API , check it
+        nest g resource modules/resourcesTest
+    this generates a folder called "resources-test" with dto files, entities, module, service and controller

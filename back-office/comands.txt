@@ -20,6 +20,9 @@ Generate
     nest g middleware name
     --RESOURCES
     nest g recourse name        //This generates the service, module, controller, dto, test and entity files
+    --PRISMA
+        npx prisma init         //Starts prisma
+        npx prisma migrate dev --name init      //Connects to dataBase and migrates the information inside prisma/schema.prisma
 =================================================================================
 #NestJS Concepts and USEFUL INFORMATION#
 
@@ -80,3 +83,10 @@ Resources is a command that creates different files in a single command. Resourc
     I created a module called "resourcesTest" as a REST API , check it
         nest g resource modules/resourcesTest
     this generates a folder called "resources-test" with dto files, entities, module, service and controller
+
+===
+DATABASE
+NestJS incentivates the use of an ORM. For the webpage I will use the ORM called "Prisma" (npm install prisma --save-dev)
+I will use PostgreSQL as a database.
+The file prisma/schema.prisma can be added models and they will connect using .env information, into database an update it when "npx prisma migrate dev --name init" is used
+
